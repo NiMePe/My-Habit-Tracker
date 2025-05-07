@@ -113,9 +113,8 @@ modules/  # habit tracker modules
 ├── habit_manager.py  # Helper functions for Habit  
 ├── counter_manager.py  # Helper functions for Counter  
 ├── user_manager.py  # Helper functions for User  
-├── fixtures.py  # Script to load 4‑week sample data  
-├── requirements.txt  # (pandas, pytest)  
- 
+└── fixtures.py  # Script to load 4‑week sample data  
+
 tests/  # pytest test suite  
 ├── __init__.py  
 ├── test_user.py  
@@ -127,8 +126,8 @@ tests/  # pytest test suite
 ├── fixtures.py  
 └── conftest.py
 
-README.md  # This file 
-prerequisites.txt 
+README.md  # This file  
+requirements.txt 
 
 ## Notes
 - Database file: main_db.db is created in the working directory.
