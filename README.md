@@ -87,7 +87,8 @@ How to install the project:
     
 3. **Follow the menus**
     - The program checks for a database: main_db.db
-    - If it does not exist, you will be asked if you want to create and initialize one
+    - If it does not exist, you will be asked if you want to create an account
+    - Database will be initialized automatically
     - Next steps: Log in (1), create a profile (2), or exit (3).
     - After login, use the main menu to view, change, update habits, change your profile or exit. 
     
