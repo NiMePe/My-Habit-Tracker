@@ -103,7 +103,7 @@ How to install the project:
 - For testing only one test file enter: pytest 'name_of_test_file'.py -vv 
 
 ## Project Structure
-modules/  
+modules/  # habit tracker modules  
 ├── main.py  # Entry point for the CLI  
 ├── db.py  # Database connection & schema  
 ├── habit.py  # Habit class  
@@ -115,17 +115,20 @@ modules/
 ├── user_manager.py  # Helper functions for User  
 ├── fixtures.py  # Script to load 4‑week sample data  
 ├── requirements.txt  # (pandas, pytest)  
-├── README.md  # This file  
-└── tests/  # pytest test suite  
-&emsp;&emsp;├── __init__.py  
-&emsp;&emsp;├── test_user.py  
-&emsp;&emsp;├── test_analyze.py  
-&emsp;&emsp;├── test_db.py  
-&emsp;&emsp;├── test_main.py  
-&emsp;&emsp;├── test_habit.py  
-&emsp;&emsp;├── test_counter.py  
-&emsp;&emsp;├── fixtures.py  
-&emsp;&emsp;└── conftest.py
+ 
+tests/  # pytest test suite  
+├── __init__.py  
+├── test_user.py  
+├── test_analyze.py  
+├── test_db.py  
+├── test_main.py  
+├── test_habit.py  
+├── test_counter.py  
+├── fixtures.py  
+└── conftest.py
+
+README.md  # This file 
+prerequisites.txt 
 
 ## Notes
 - Database file: main_db.db is created in the working directory.
