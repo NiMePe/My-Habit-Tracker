@@ -90,9 +90,9 @@ How to install the project:
     - If they do not exist, you will be asked if you want to create an account
     - The database will be initialized automatically
     - After login, use the main menu to analyze, change, and update habits or to change your profile.<br>
-&emsp;&emsp;3.1 **How to create a new habit**<br>
+&emsp;3.1 **How to create a new habit**<br>
 &emsp;&emsp;&emsp;- Log in > Navigate to 2 CHANGE HABITS >  1. Create Custom Habit > Enter user input or cancel<br>
-&emsp;&emsp;3.2 **How to complete a task within a given period**<br>
+&emsp;3.2 **How to complete a task within a given period**<br>
 &emsp;&emsp;&emsp;- Log in > Navigate to 3 UPDATE HABITS & STREAKS > 1. Check a Habit > Enter the name of the habit > Confirm
 
 ## Test
@@ -117,7 +117,7 @@ modules/
 ├── requirements.txt  # (pandas, pytest)  
 ├── README.md  # This file  
 └── tests/  # pytest test suite  
-&emsp;&emsp;├── __init__.py
+&emsp;&emsp;├── __init__.py  
 &emsp;&emsp;├── test_user.py  
 &emsp;&emsp;├── test_analyze.py  
 &emsp;&emsp;├── test_db.py  
