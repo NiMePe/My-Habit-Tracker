@@ -118,14 +118,14 @@ How to install the project:
 ├── requirements.txt    # (pandas, pytest)  
 ├── README.md           # This file  
 └── tests/              # pytest test suite      
-    ├── test_user.py  
-    ├── test_analyze.py  
-    ├── test_db.py  
-    ├── test_main.py  
-    ├── test_habit.py  
-    ├── test_counter.py  
-    ├── fixtures.py  
-    └── conftest.py
+        ├── test_user.py  
+        ├── test_analyze.py  
+        ├── test_db.py  
+        ├── test_main.py  
+        ├── test_habit.py  
+        ├── test_counter.py  
+        ├── fixtures.py  
+        └── conftest.py
 
 ## Notes
 - Database file: main_db.db is created in the working directory.
