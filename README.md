@@ -59,8 +59,8 @@ How to install the project:
 
 1. **Clone the repository**
     - Download from **GitHub**:
-      Go to URL https://github.com/NiMePe/My-Habit-Tracker.git
-      Click " <> Code" button
+      Go to URL https://github.com/NiMePe/My-Habit-Tracker.git<br>
+      Click " <> Code" button<br>
       Click "Dowlnload ZIP"
 
 2. **Create and activate a virtual environment**
