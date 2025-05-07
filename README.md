@@ -117,7 +117,8 @@ How to install the project:
 ├── fixtures.py         # Script to load 4‑week sample data  
 ├── requirements.txt    # (pandas, pytest)  
 ├── README.md           # This file  
-└── tests/              # pytest test suite      
+└── tests/              # pytest test suite  
+&emsp;&emsp;├── __init__.py
 &emsp;&emsp;├── test_user.py  
 &emsp;&emsp;├── test_analyze.py  
 &emsp;&emsp;├── test_db.py  
