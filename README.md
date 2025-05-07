@@ -91,9 +91,9 @@ How to install the project:
     - The database will be initialized automatically
     - After login, use the main menu to analyze, change, and update habits or to change your profile. 
     
-    3.1 **How to create a new habit**
-        - Log in > Navigate to 2 CHANGE HABITS >  1. Create Custom Habit > Enter user input or cancel
-    3.2 **How to complete a task within a given period**
+    3.1 **How to create a new habit**<br>
+        - Log in > Navigate to 2 CHANGE HABITS >  1. Create Custom Habit > Enter user input or cancel<br>
+    3.2 **How to complete a task within a given period**<br>
         - Log in > Navigate to 3 UPDATE HABITS & STREAKS > 1. Check a Habit > Enter the name of the habit > Confirm
 
 ## Test
