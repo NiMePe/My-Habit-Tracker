@@ -89,12 +89,11 @@ How to install the project:
     - The program checks for an account and an existing database: main_db.db
     - If they do not exist, you will be asked if you want to create an account
     - The database will be initialized automatically
-    - After login, use the main menu to analyze, change, and update habits or to change your profile. 
-    
-    3.1 **How to create a new habit**<br>
-        - Log in > Navigate to 2 CHANGE HABITS >  1. Create Custom Habit > Enter user input or cancel<br>
-    3.2 **How to complete a task within a given period**<br>
-        - Log in > Navigate to 3 UPDATE HABITS & STREAKS > 1. Check a Habit > Enter the name of the habit > Confirm
+    - After login, use the main menu to analyze, change, and update habits or to change your profile.
+&emsp;&emsp;3.1 **How to create a new habit**<br>
+&emsp;&emsp;&emsp;- Log in > Navigate to 2 CHANGE HABITS >  1. Create Custom Habit > Enter user input or cancel<br>
+&emsp;&emsp;3.2 **How to complete a task within a given period**<br>
+&emsp;&emsp;&emsp;- Log in > Navigate to 3 UPDATE HABITS & STREAKS > 1. Check a Habit > Enter the name of the habit > Confirm
 
 ## Test
 **How to run tests for the project:**  
@@ -104,20 +103,20 @@ How to install the project:
     - For testing only one test file enter: pytest 'name_of_test_file'.py -vv 
 
 ## Project Structure
-modules/
-├── main.py&emsp;&emsp;# Entry point for the CLI  
-├── db.py&emsp;&emsp;# Database connection & schema  
-├── habit.py&emsp;&emsp;# Habit class  
-├── user.py&emsp;&emsp;# User class & auth  
-├── counter.py&emsp;&emsp;# Counter class  
-├── analyze.py&emsp;&emsp;# Analytics functions (pandas)  
-├── habit_manager.py&emsp;&emsp;# Helper functions for Habit  
-├── counter_manager.py&emsp;&emsp;# Helper functions for Counter  
-├── user_manager.py&emsp;&emsp;# Helper functions for User  
-├── fixtures.py&emsp;&emsp;# Script to load 4‑week sample data  
-├── requirements.txt&emsp;&emsp;# (pandas, pytest)  
-├── README.md&emsp;&emsp;# This file  
-└── tests/&emsp;&emsp;# pytest test suite  
+modules/  
+├── main.py  # Entry point for the CLI  
+├── db.py  # Database connection & schema  
+├── habit.py  # Habit class  
+├── user.py  # User class & auth  
+├── counter.py  # Counter class  
+├── analyze.py  # Analytics functions (pandas)  
+├── habit_manager.py  # Helper functions for Habit  
+├── counter_manager.py  # Helper functions for Counter  
+├── user_manager.py  # Helper functions for User  
+├── fixtures.py  # Script to load 4‑week sample data  
+├── requirements.txt  # (pandas, pytest)  
+├── README.md  # This file  
+└── tests/  # pytest test suite  
 &emsp;&emsp;├── __init__.py
 &emsp;&emsp;├── test_user.py  
 &emsp;&emsp;├── test_analyze.py  
