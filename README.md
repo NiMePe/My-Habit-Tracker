@@ -79,18 +79,17 @@ How to install the project:
 
 ## Usage
 1. **Open a terminal in your project root (where main.py is)**
-    - cd <repository_folder> (e. g. C:\Users\Your_Name\Desktop\counter\modules)  
+    - cd <repository_folder> (e. g. C:\Users\Your_Name\Desktop\My_Habit_Tracker\modules)  
 
 2. **Start the program**
     - Open your virtual environment
     - Start with: python main.py  
     
 3. **Follow the menus**
-    - The program checks for a database: main_db.db
-    - If it does not exist, you will be asked if you want to create an account
-    - Database will be initialized automatically
-    - Next steps: Log in (1), create a profile (2), or exit (3).
-    - After login, use the main menu to view, change, update habits, change your profile or exit. 
+    - The program checks for an account and an existing database: main_db.db
+    - If they do not exist, you will be asked if you want to create an account
+    - The database will be initialized automatically
+    - After login, use the main menu to analyze, change, and update habits or to change your profile. 
     
     3.1 **How to create a new habit**
         - Log in > Navigate to 2 CHANGE HABITS >  1. Create Custom Habit > Enter user input or cancel
@@ -100,25 +99,25 @@ How to install the project:
 ## Test
 **How to run tests for the project:**  
     - Open your virtual environment  
-    - Change directory to test folder: cd <tests_folder> (e.g. C:\Users\Your_Name\Desktop\counter\tests)  
-    - For all test files enter: pytest tests -vv  
-    - For only one test file enter: pytest 'name_of_test_file'.py -vv 
+    - Change directory to test folder: cd <tests_folder> (e.g. C:\Users\Your_Name\Desktop\My_Habit_Tracker\tests)  
+    - For testing all test files enter: pytest tests -vv  
+    - For testing only one test file enter: pytest 'name_of_test_file'.py -vv 
 
 ## Project Structure
-
-├── main.py             # Entry point for the CLI  
-├── db.py               # Database connection & schema  
-├── habit.py            # Habit class  
-├── user.py             # User class & auth  
-├── counter.py          # Counter class  
-├── analyze.py          # Analytics functions (pandas)  
-├── habit_manager.py    # Helper functions for Habit  
-├── counter_manager.py  # Helper functions for Counter  
-├── user_manager.py     # Helper functions for User  
-├── fixtures.py         # Script to load 4‑week sample data  
-├── requirements.txt    # (pandas, pytest)  
-├── README.md           # This file  
-└── tests/              # pytest test suite  
+modules/
+├── main.py&emsp;&emsp;# Entry point for the CLI  
+├── db.py&emsp;&emsp;# Database connection & schema  
+├── habit.py&emsp;&emsp;# Habit class  
+├── user.py&emsp;&emsp;# User class & auth  
+├── counter.py&emsp;&emsp;# Counter class  
+├── analyze.py&emsp;&emsp;# Analytics functions (pandas)  
+├── habit_manager.py&emsp;&emsp;# Helper functions for Habit  
+├── counter_manager.py&emsp;&emsp;# Helper functions for Counter  
+├── user_manager.py&emsp;&emsp;# Helper functions for User  
+├── fixtures.py&emsp;&emsp;# Script to load 4‑week sample data  
+├── requirements.txt&emsp;&emsp;# (pandas, pytest)  
+├── README.md&emsp;&emsp;# This file  
+└── tests/&emsp;&emsp;# pytest test suite  
 &emsp;&emsp;├── __init__.py
 &emsp;&emsp;├── test_user.py  
 &emsp;&emsp;├── test_analyze.py  
