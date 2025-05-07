@@ -59,7 +59,9 @@ How to install the project:
 
 1. **Clone the repository**
     - Download from **GitHub**:
-      git clone https://github.com/<username>/<repository>.git
+      Go to URL https://github.com/NiMePe/My-Habit-Tracker.git
+      Click " <> Code" button
+      Click "Dowlnload ZIP"
 
 2. **Create and activate a virtual environment**
     - Windows open Terminal (type "cmd" into search bar):
@@ -115,14 +117,14 @@ How to install the project:
 ├── fixtures.py         # Script to load 4‑week sample data 
 ├── requirements.txt    # (pandas, pytest)  
 ├── README.md           # This file  
-└── tests/              # pytest test suite  
+└── tests/              # pytest test suite      
     ├── test_user.py  
     ├── test_analyze.py  
     ├── test_db.py  
     ├── test_main.py  
     ├── test_habit.py  
-    ├── test_counter.py
-    ├── fixtures.py 
+    ├── test_counter.py  
+    ├── fixtures.py  
     └── conftest.py
 
 ## Notes
