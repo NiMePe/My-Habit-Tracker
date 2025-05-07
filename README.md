@@ -114,7 +114,7 @@ How to install the project:
 ├── habit_manager.py    # Helper functions for Habit  
 ├── counter_manager.py  # Helper functions for Counter  
 ├── user_manager.py     # Helper functions for User  
-├── fixtures.py         # Script to load 4‑week sample data 
+├── fixtures.py         # Script to load 4‑week sample data  
 ├── requirements.txt    # (pandas, pytest)  
 ├── README.md           # This file  
 └── tests/              # pytest test suite      
