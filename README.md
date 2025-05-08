@@ -94,7 +94,7 @@ How to install the project:
 3.2 **How to complete a task within a given period**<br>
 &emsp;- Log in > Navigate to 3 UPDATE HABITS & STREAKS > 1. Check a Habit > Enter the name of the habit > Confirm
 
-## Test
+## Testing
 **How to run tests for the project:**  
 - Open your virtual environment  
 - Change directory to test folder: cd <tests_folder> (e.g. C:\Users\Your_Name\Desktop\My_Habit_Tracker\tests)  
