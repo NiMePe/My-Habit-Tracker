@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite DBs
+main_db.db
+*.sqlite3
+*.db
+
+# pytest-Cache und Coverage
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+
+# Virtuelle Umgebungen
+venv/
+.env/
+env/
+
+# Logs und temporäre Dateien
+*.log
+*.tmp
+*.bak
+
+# IDE/Editor-Einstellungen
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
