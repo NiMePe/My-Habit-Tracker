@@ -115,15 +115,15 @@ modules/  # habit tracker modules
 └── fixtures.py  # Script to load 4‑week sample data  
 
 tests/  # pytest test suite  
-├── __init__.py  
-├── test_user.py  
+├── __init__.py  # marks directory as a Python package  
+├── fixtures.py  # Defines reusable sample data and helper functions  
+├── conftest.py  # Configures pytest by registering fixtures  
 ├── test_analyze.py  
 ├── test_db.py  
 ├── test_main.py  
 ├── test_habit.py  
 ├── test_counter.py  
-├── fixtures.py  
-└── conftest.py
+└── test_user.py 
 
 README.md  # This file  
 requirements.txt 
