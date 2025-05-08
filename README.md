@@ -105,7 +105,7 @@ How to install the project:
 - For testing only one test file enter: pytest 'name_of_test_file'.py -vv 
 
 ## Project Structure
-modules/  # habit tracker modules  
+modules/  # habit tracker source modules  
 ├── main.py  # Entry point for the CLI  
 ├── db.py  # Database connection & schema  
 ├── habit.py  # Habit class  
@@ -118,7 +118,7 @@ modules/  # habit tracker modules
 └── fixtures.py  # Script to load 4‑week sample data  
 
 tests/  # pytest test suite  
-├── __init__.py  # marks directory as a Python package  
+├── `__init__.py`  # marks directory as a Python package  
 ├── fixtures.py  # Defines reusable sample data and helper functions  
 ├── conftest.py  # Configures pytest by registering fixtures  
 ├── test_analyze.py  
