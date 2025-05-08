@@ -78,7 +78,8 @@ How to install the project:
 
 ## Usage
 1. **Open a terminal in your project root (where main.py is)**
-    - cd <repository_folder> (e. g. C:\Users\Your_Name\Desktop\My_Habit_Tracker\modules)  
+    - cd <repository_folder>
+    - e. g., cd C:\Users\Your_Name\Desktop\My_Habit_Tracker\modules  
 
 2. **Start the program**
     - Open your virtual environment
