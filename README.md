@@ -132,6 +132,6 @@ README.md  # This file
 requirements.txt 
 
 ## Notes
-- Database file: Is created in the working directory (e.g. \modules or \tests)
+- Database file: A "main_db.db" is created in the working directory (e.g. \modules or \tests)
 - Reset data: Delete your account in menu 4 or delete main_db.db
 - Sample data: Test fixtures load 4‑week tracking data automatically via fixtures.py   
