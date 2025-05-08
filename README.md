@@ -72,6 +72,7 @@ How to install the project:
     - Via IDE  
 
 4. **Install dependencies (first use)**
+    - cd <repository_folder>
     - pip install --upgrade pip 
     - pip install -r requirements.txt
      
