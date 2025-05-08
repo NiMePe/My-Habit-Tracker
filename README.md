@@ -83,7 +83,7 @@ How to install the project:
 
 2. **Start the program**
     - Open your virtual environment
-    - Start with: python main.py  
+    - Enter: python main.py  
     
 3. **Follow the menus**
     - The program checks for an account and an existing database: main_db.db
