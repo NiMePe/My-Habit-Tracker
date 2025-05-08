@@ -3,7 +3,7 @@ The My Habit Tracker app is a CLIâ€‘based habit tracker backend built in Pythonâ
 It is a tool to help you achieve a personal goal by monitoring the implementation of a new habit.  
 Your data will be stored in a local database file, which will then be used to analyze your tracking data.  
 To use the program, a local database file must be created and certain external libraries must be installed  
-(see prerequisites.txt).
+(see requirements.txt).
 
 ## Table of Contents
 1. [Features](#features)
