@@ -63,7 +63,7 @@ How to install the project:
       Click "Download ZIP"
 
 2. **Create and activate a virtual environment**
-    - Windows open Terminal (type "cmd" into search bar):
+    - Windows:
         - python -m venv venv
         - venv\Scripts\activate.bat
     - Linux & macOS:
@@ -71,7 +71,7 @@ How to install the project:
         - source .venv/bin/activate
     - Via IDE  
 
-3. **Install dependencies (first use)**
+4. **Install dependencies (first use)**
     - pip install --upgrade pip 
     - pip install -r requirements.txt
      
