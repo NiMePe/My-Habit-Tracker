@@ -12,8 +12,7 @@ To use the program, a local database file must be created and certain external l
 4. [Usage](#usage)
 5. [Testing](#testing)
 6. [Project Structure](#project-structure)
-7. [Contributing](#contributing)
-8. [License](#license)
+7. [Notes](#notes)
 
 ## Features
 **1. User Management**
