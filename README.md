@@ -89,11 +89,13 @@ How to install the project:
     - The program checks for an account and an existing database: main_db.db
     - If they do not exist, you will be asked if you want to create an account
     - The database will be initialized automatically
-    - After login, use the main menu to analyze, change, and update habits or to change your profile.<br>
-3.1 **How to create a new habit**<br>
-&emsp;- Log in > Navigate to 2 CHANGE HABITS >  1. Create Custom Habit > Enter user input or cancel<br>
-3.2 **How to complete a task within a given period**<br>
-&emsp;- Log in > Navigate to 3 UPDATE HABITS & STREAKS > 1. Check a Habit > Enter the name of the habit > Confirm
+    - After login, use the main menu to analyze, change, and update habits or to change your profile
+
+4. **How to ...**
+   - ... create a new habit:<br>
+&emsp;&emsp;Log in > Navigate to 2 CHANGE HABITS >  1. Create Custom Habit > Enter user input or cancel
+   - ... complete a task within a given period:<br>
+&emsp;&emsp;Log in > Navigate to 3 UPDATE HABITS & STREAKS > 1. Check a Habit > Enter the name of the habit > Confirm
 
 ## Testing
 **How to run tests for the project:**  
