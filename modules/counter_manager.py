@@ -1,7 +1,7 @@
 """
-    File that contains helper functions to manage the database connection and
-    user interaction with the counter of the habit tracker.
-    Functions will be called in the counter class.
+File that contains helper functions to manage the database connection and
+user interaction with the counter of the habit tracker.
+Functions will be called in the counter class.
 """
 
 import sqlite3
@@ -12,8 +12,8 @@ from db import add_counter
 ### Functions defining the update of the repetition and the streak counters
 def increment_streak(cur, db, habit_name, user_id, manual=True):
     """
-        Function that increments the streak counter of a habit with 
-        respect to manual vs automatic increment
+    Function that increments the streak counter of a habit with 
+    respect to manual vs automatic increment
     """
     # Only prompt when called manually
     if manual:
@@ -127,8 +127,8 @@ def increment_streak(cur, db, habit_name, user_id, manual=True):
 
 def increment_counter(cur, db, habit_name, user_id, manual=True):
     """
-        Function that increments the streak counter and the number of repetions in case
-        of automatic incrementing
+    Function that increments the streak counter and the number of repetions in case
+    of automatic incrementing
     """
     # Only prompt when called manually
     if manual:    
@@ -211,9 +211,9 @@ def increment_counter(cur, db, habit_name, user_id, manual=True):
 ### Function to mark a habit as checked & automatically update counters
 def check_habit(cur, db, user_id):
     """
-        Function that lets the user check a given habit. 
-        It detects a possible streak break, automatically 
-        increments the repetition counter and the streak counter.
+    Function that lets the user check a given habit. 
+    It detects a possible streak break, automatically 
+    increments the repetition counter and the streak counter.
     """
     print("\nWith this option you can mark a habit as checked.")
     print("\nNote: The repetition counter and the streak will be updated automatically.")
@@ -406,7 +406,7 @@ def reset_streak(cur, db, habit_name, user_id):
         
 def reset_rep(cur, db, user_id):
     """
-        Function to allow manual reset of the repetition counter of a given habit by the user
+    Function to allow manual reset of the repetition counter of a given habit by the user
     """
     print("\nWith this option you can reset a habit's repetition counter to 0.")
     try:
