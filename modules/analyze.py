@@ -2,7 +2,7 @@
     This file contains functions for the logged-in user to analyze their data.
     The user will be able to view all, all custom, and all predefined habits.
     They can filter for daily and for weekly habits.
-    The user can also view their streaks and the repetition counter.
+    The user can also view their streaks and the repetition counte.
     The analyze file makes use of the pandas and sqlite libraries.
 """
 
@@ -133,10 +133,11 @@ def show_longest_streak(cur, user_id):
     """Function to display the longest streaks ever of all habits in descending order"""
     try:
         # Select maximum streak
-        cur.execute("""SELECT habit_name AS Habit, MAX(habit_streak) AS Streak
-                    FROM counter WHERE user_id = ? AND habit_streak > 0
-                    AND check_date <= date('now') GROUP BY habit_name
-                    ORDER BY Streak DESC""", (user_id,)
+        cur.execute("""SELECT habit_name AS Habit, 
+                    max_streak AS Streak
+                    FROM habits 
+                    WHERE user_id = ? 
+                    ORDER BY max_streak DESC""", (user_id,)
                     )
         streaks = cur.fetchall()
         if not streaks:
