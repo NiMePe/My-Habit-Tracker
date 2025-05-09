@@ -1,5 +1,5 @@
 """
-    Test file for user.py module
+Test file for user.py module
 """
 
 import sqlite3
