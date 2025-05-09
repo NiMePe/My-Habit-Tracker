@@ -97,10 +97,30 @@ def increment_streak(cur, db, habit_name, user_id, manual=True):
             )
             db.commit()
             print(f"***The streak for '{habit_name}' has been manually set to {new_streak}.***")
+            
+            # Manual Increment: Update max streak
+            cur.execute(
+                "UPDATE habits "
+                "   SET max_streak = CASE WHEN max_streak < ? THEN ? ELSE max_streak END "
+                " WHERE user_id = ? AND habit_name = ?",
+                (new_streak, new_streak, user_id, habit_name)
+            )
+            db.commit()            
+            
         else:
             # Automatic Increment: Called in check_habit and in increment_counter
             add_counter(cur, db, user_id, habit_name, check_date, check_time, 0, new_streak)
             print(f"***The streak for '{habit_name}' has been incremented to {new_streak}.***")
+            
+            # Automatic Increment: Update max streak
+            cur.execute(
+                "UPDATE habits "
+                "   SET max_streak = CASE WHEN max_streak < ? THEN ? ELSE max_streak END "
+                " WHERE user_id = ? AND habit_name = ?",
+                (new_streak, new_streak, user_id, habit_name)
+            )
+            db.commit()
+            
     except sqlite3.Error as e:
         db.rollback()
         print(f"An error occurred while incrementing streak for '{habit_name}': {e}")
@@ -182,6 +202,7 @@ def increment_counter(cur, db, habit_name, user_id, manual=True):
             add_counter(cur, db, user_id, habit_name, check_date, check_time, new_rep, 0)
             print(f"***The number of repetitions of '{habit_name}' has been successfully incremented to {new_rep}.***")
             increment_streak(cur, db, habit_name, user_id, manual=False)
+            
     except sqlite3.Error as e:
         db.rollback()
         print(f"Error while incrementing counter for '{habit_name}': {e}")
@@ -236,8 +257,30 @@ def check_habit(cur, db, user_id):
         now = datetime.now()
         check_date = now.strftime('%Y-%m-%d')  # Current date
         check_time = now.strftime('%H:%M:%S')  # Current time
+        
+        # 6. Make counter entry only when habit entry exists (foreign key check)
+        cur.execute(
+            "SELECT 1 FROM habits WHERE user_id = ? AND habit_name = ?",
+            (user_id, habit_name)
+        )
+        if not cur.fetchone():
+            cur.execute(       
+                """
+                INSERT INTO habits (
+                    user_id, habit_name, habit_def,
+                    habit_type, habit_interval, is_custom
+                )
+                SELECT ?, habit_name, habit_def,
+                       habit_type, habit_interval, 0
+                  FROM habits
+                 WHERE is_custom = 0
+                   AND habit_name = ?
+                """,
+                (user_id, habit_name)
+            )
+            db.commit()
 
-        # 6. Ask user for confirmation of habit period
+        # 7. Ask user for confirmation of habit period
         if habit_interval == "Daily":
             print(f"Did you practice '{habit_name}' today ({check_date})?") 
             check_input = input("Please type 'Y' for yes or 'N' for no: ").lower()
@@ -249,7 +292,7 @@ def check_habit(cur, db, user_id):
 
 
         if check_input == "y": 
-        # 7. Make sure: Only 1 check per day/week
+        # 8. Make sure: Only 1 check per day/week
             cur.execute(
             "SELECT check_date FROM counter WHERE user_id = ? AND habit_name = ? "
             "ORDER BY check_date DESC LIMIT 1",
@@ -267,7 +310,7 @@ def check_habit(cur, db, user_id):
                           "If you need more granularity, please change the habit interval in menu 2-3.")
                     return
 
-        # 8. Automatic streak‑break detection with eventual streak reset to 0
+        # 9. Automatic streak‑break detection with eventual streak reset to 0
             cur.execute(
                 "SELECT check_date FROM counter WHERE habit_name = ? AND user_id = ? "
                 "ORDER BY check_date DESC LIMIT 1",
@@ -286,12 +329,10 @@ def check_habit(cur, db, user_id):
                     )
                     db.commit()
 
-        # 9. Call add_counter function from db.py to update counter in database: repetition += 1
-            add_counter(cur, db, user_id, habit_name, check_date, check_time, 1, 0)
+        # 10. Call increment_counter function to increment counter & streak
+            increment_counter(cur, db, habit_name, user_id, manual=False)
             print(f"***The habit '{habit_name}' was successfully marked as checked.***")
 
-            # Automatically increment the streak
-            increment_streak(cur, db, habit_name, user_id, manual=False)
         else:
             print(f"The habit '{habit_name}' was not marked as checked.")
 
@@ -332,36 +373,22 @@ def reset_streak(cur, db, habit_name, user_id):
                     idx = names_lower.index(user_input.lower())
                     habit_name = names[idx] 
                     
-                    # Get last check date
-                    cur.execute("""SELECT check_date FROM counter WHERE habit_name = ? 
-                                AND user_id = ? ORDER BY check_date DESC LIMIT 1""",
-                                (habit_name, user_id)
-                                )
-                    row = cur.fetchone()
-                    if row:
-                        last_date = row[0]
-
-                    # Determine the habit's interval (Daily vs. Weekly)
-                    cur.execute("""SELECT habit_interval FROM habits WHERE habit_name = ? 
-                                AND (user_id = ? OR is_custom = 0)""",
-                                (habit_name, user_id)
-                                )
-                    row_int = cur.fetchone()
-                    interval = row_int[0] if row_int else "Daily"
-
-                    # Use today's date for the break entry
-                    from datetime import datetime
-                    break_date = datetime.now().strftime("%Y-%m-%d")
-                    break_time = datetime.now().strftime("%H:%M:%S")
-
-                    # Insert break record or update if there is a record for today
-                    cur.execute("""INSERT INTO counter (user_id, habit_name, check_date, check_time, 
-                                habit_rep, habit_streak) VALUES (?, ?, ?, ?, 0, 0)
-                                ON CONFLICT(user_id, habit_name, check_date) DO UPDATE
-                                SET habit_streak = 0 """, 
-                                (user_id, habit_name, break_date, break_time) 
-                                )                                           
-                    db.commit()
+                    # Reset the most recent record, keep history
+                    cur.execute(
+                        """
+                        UPDATE counter
+                           SET habit_streak = 0
+                         WHERE rowid = (
+                             SELECT rowid
+                               FROM counter
+                              WHERE user_id = ? AND habit_name = ?
+                              ORDER BY check_date DESC, check_time DESC
+                              LIMIT 1
+                         )
+                        """, (user_id, habit_name)
+                    )
+                    db.commit()                   
+                    
                     print(f"***The streak for '{habit_name}' has been successfully reset to 0.***")
                     return
                 else:
@@ -429,6 +456,3 @@ def reset_rep(cur, db, user_id):
     except sqlite3.Error as e:
         db.rollback()
         print(f"An error occurred while resetting repetition counter for '{habit_name}': {e}")
-
-
-        
