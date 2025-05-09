@@ -67,6 +67,7 @@ def create_tables(cur, db):
                         habit_date TEXT,
                         habit_interval TEXT,
                         is_custom BOOLEAN DEFAULT 1,
+                        max_streak   INTEGER DEFAULT 0,
                         PRIMARY KEY (user_id, habit_name),
                         FOREIGN KEY (user_id) REFERENCES user (user_id) ON DELETE CASCADE)
                     """)
