@@ -1,7 +1,7 @@
 """
-    This file contains helper functions for the user class to create, change and authenticate a user profile.
-    The library sys is used for program termination. The library pwinput is used to cover a password while typing.
-    All functions are called in the user class.
+This file contains helper functions for the user class to create, change and authenticate a user profile.
+The library sys is used for program termination. The library pwinput is used to cover a password while typing.
+All functions are called in the user class.
 """
 
 import sys
