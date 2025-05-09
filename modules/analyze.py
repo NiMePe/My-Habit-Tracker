@@ -1,9 +1,9 @@
 """
-    This file contains functions for the logged-in user to analyze their data.
-    The user will be able to view all, all custom, and all predefined habits.
-    They can filter for daily and for weekly habits.
-    The user can also view their streaks and the repetition counte.
-    The analyze file makes use of the pandas and sqlite libraries.
+This file contains functions for the logged-in user to analyze their data.
+The user will be able to view all, all custom, and all predefined habits.
+They can filter for daily and for weekly habits.
+The user can also view their streaks and the repetition counte.
+The analyze file makes use of the pandas and sqlite libraries.
 """
 
 import sqlite3
