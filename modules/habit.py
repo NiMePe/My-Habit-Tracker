@@ -1,8 +1,8 @@
 """ 
-    This file contains the habit class.
-    It is used to insert the predefined habits and custom habits into the database.
-    Plus, it allows the user to delete and edit habits.
-    For this purpose, the functions from "habit_manager.py" are called.
+This file contains the habit class.
+It is used to insert the predefined habits and custom habits into the database.
+Plus, it allows the user to delete and edit habits.
+For this purpose, the functions from "habit_manager.py" are called.
 """
 
 from habit_manager import create_predef_habits, create_custom_habits, delete_custom_habit, edit_custom_habit
