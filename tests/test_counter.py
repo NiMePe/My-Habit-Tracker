@@ -1,5 +1,5 @@
 """
-    Test file for counter.py module
+Test file for counter.py module
 """
 
 import sqlite3
