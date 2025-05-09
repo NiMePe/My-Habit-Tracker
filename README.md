@@ -102,7 +102,7 @@ How to install the project:
 **How to run tests for the project:**  
 - Open your virtual environment  
 - Change directory to test folder: cd <tests_folder> (e.g. C:\Users\Your_Name\Desktop\My-Habit-Tracker-main\tests)  
-- For testing all test files enter: pytest tests -vv  
+- For testing all test files enter: pytest -v  
 - For testing only one test file enter: pytest 'name_of_test_file'.py -vv 
 
 ## Project Structure
