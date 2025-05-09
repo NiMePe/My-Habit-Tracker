@@ -1,5 +1,5 @@
 """
-    File used to indicate the correct test folder and to load the sample data.
+File used to indicate the correct test folder and to load the sample data.
 """
 
 import sys
