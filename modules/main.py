@@ -1,13 +1,13 @@
 """
-    This file contains the main program to guide a user through the habit tracker backend system. 
-    It makes use of several modules such as:
-    - counter (for updating habit counters and streaks),
-    - analyze (for data analysis),
-    - db (for database operations),
-    - habit (for habit-related actions),
-    - user (for user profile management).
+This file contains the main program to guide a user through the habit tracker backend system. 
+It makes use of several modules such as:
+- counter (for updating habit counters and streaks),
+- analyze (for data analysis),
+- db (for database operations),
+- habit (for habit-related actions),
+- user (for user profile management).
 
-    The code is organized into separate functions for the different menus and operations.
+The code is organized into separate functions for the different menus and operations.
 """
 
 from counter import Counter
@@ -45,11 +45,11 @@ def welcome_menu():
 # ----------------------------------------
 def database_needed():
     """
-        Check if a database exists and initialize it if necessary.
-        Prompts the user to create a new database or exit the program.
-        Returns:
-            db: database connection object, or None if the user exits.
-            cur: database cursor, or None if the user exits.
+    Check if a database exists and initialize it if necessary.
+    Prompts the user to create a new database or exit the program.
+    Returns:
+        db: database connection object, or None if the user exits.
+        cur: database cursor, or None if the user exits.
     """
     print("To use the program, a local database file must be created.")
     print("The program will now check whether a database exists.")
@@ -100,9 +100,9 @@ def database_needed():
 # ----------------------------------------
 def login_user_menu(cur, db):
     """
-        Display the login menu where the user can choose to log in,
-        create a new profile, or exit the program.
-        Returns the user identifier (username or ID) upon successful authentication.
+    Display the login menu where the user can choose to log in,
+    create a new profile, or exit the program.
+    Returns the user identifier (username or ID) upon successful authentication.
     """
     print("Do you already have a user profile?")
     log_input = input("Yes = 1, No = 2, Exit = 3: ").strip()
@@ -146,8 +146,8 @@ def login_user_menu(cur, db):
 # ------------------------------------------------
 def main_user_menu():
     """
-        Display the main menu with options to view, change, 
-        update habits, or change profile.
+    Display the main menu with options to view, change, 
+    update habits, or change profile.
     """
     
     print("""
@@ -191,8 +191,8 @@ def main_user_menu():
 # ----------------------------------------
 def view_habits(cur, user_id):
     """
-        Display a submenu for viewing habits and streaks.
-        The user can choose which data to display.
+    Display a submenu for viewing habits and streaks.
+    The user can choose which data to display.
     """
     while True:
         print("""
@@ -241,8 +241,8 @@ def view_habits(cur, user_id):
 # ----------------------------------------
 def change_habits(cur, db, user_id):
     """
-        Display a submenu for changing habits.
-        Options include creating, deleting, or editing habits.
+    Display a submenu for changing habits.
+    Options include creating, deleting, or editing habits.
     """
     while True:
         print("""
@@ -280,8 +280,8 @@ def change_habits(cur, db, user_id):
 # ----------------------------------------
 def update_habits(cur, db, user_id):
     """
-        Display a submenu for updating habit data.
-        The options include checking a habit, resetting counters, and manually updating streaks.
+    Display a submenu for updating habit data.
+    The options include checking a habit, resetting counters, and manually updating streaks.
     """
     while True:
         print("""
@@ -331,8 +331,8 @@ def update_habits(cur, db, user_id):
 # ----------------------------------------
 def change_profile(cur, db, user_id):
     """
-        Display a submenu for profile management.
-        This menu allows the user to edit or delete their profile data.
+    Display a submenu for profile management.
+    This menu allows the user to edit or delete their profile data.
     """
     while True:
         print("""
