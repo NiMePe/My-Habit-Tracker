@@ -72,7 +72,7 @@ def create_custom_habits(cur, db, user_id):
                 break
             else:
                 print("Invalid input. Please type 'd' for daily or 'w' for weekly.")
-
+        
         # Insert custom habit into the database
         cur.execute("INSERT INTO habits (user_id, habit_name, habit_def, habit_type, habit_date, habit_interval, is_custom) VALUES (?, ?, ?, ?, ?, ?, 1)",
                     (user_id, habit_name, habit_def, habit_type, habit_date, habit_interval))
@@ -81,7 +81,7 @@ def create_custom_habits(cur, db, user_id):
         print("Custom habit was successfully created!")
     except sqlite3.Error as e:
         db.rollback()
-        print(f"An error occurred while creating your custom habit: {e}")
+        raise
             
 
         
