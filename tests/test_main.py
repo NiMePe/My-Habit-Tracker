@@ -1,5 +1,5 @@
 """
-    Test file for the main.py module
+Test file for the main.py module
 """
 
 import io
