@@ -1,9 +1,9 @@
 """ 
-    In this file, a database will be created using the sqlite3 library. The database will consist of the following three tables:
-    User - Habit - Counter. It is initialized in the main.py.
-    The habit and the counter tables will make use of foreign keys to reference data of the other two respective tables. 
-    The counter table uses a UNIQUE constraint. In combination with INSERT INTO... ON CONFLICT... DO UPDATE... in add_counter
-    duplicates are avoided and automatic updates encouraged. Furthermore, there will be various functions that involve the database.
+In this file, a database will be created using the sqlite3 library. The database will consist of the following three tables:
+User - Habit - Counter. It is initialized in the main.py.
+The habit and the counter tables will make use of foreign keys to reference data of the other two respective tables. 
+The counter table uses a UNIQUE constraint. In combination with INSERT INTO... ON CONFLICT... DO UPDATE... in add_counter
+duplicates are avoided and automatic updates encouraged. Furthermore, there will be various functions that involve the database.
 """
 
 import sqlite3
