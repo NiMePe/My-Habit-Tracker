@@ -1,10 +1,10 @@
 """
-    File that contains helper functions for the habit class to
-    - insert predefined habits into database
-    - create custom habits
-    - delete habits
-    - edit habits
-    Functions will be called in the habit class.
+File that contains helper functions for the habit class to
+- insert predefined habits into database
+- create custom habits
+- delete habits
+- edit habits
+Functions will be called in the habit class.
 """
 
 import sqlite3
