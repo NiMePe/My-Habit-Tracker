@@ -47,8 +47,8 @@ def close_db():
         
 def create_tables(cur, db):
     """
-        Function to create all necessary tables in the database.
-        Called in initialize_db.
+    Function to create all necessary tables in the database.
+    Called in initialize_db.
     """
     try:
         # Create User Data Table
@@ -94,8 +94,8 @@ def create_tables(cur, db):
 
 def initialize_db(cur, db):
     """
-        Function that initializes the database by creating tables and 
-        inserting predefined habits
+    Function that initializes the database by creating tables and 
+    inserting predefined habits
     """
     try:      
         # Create tables
