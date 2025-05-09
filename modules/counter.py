@@ -1,8 +1,8 @@
 """
-    This file contains the counter class.
-    It contains methods for the user to increment the streak and the repetition counter, 
-    to mark a habit as checked, to manually reset a streak and the repetition counter.
-    All methods call functions from 'counter_manager.py'
+This file contains the counter class.
+It contains methods for the user to increment the streak and the repetition counter, 
+to mark a habit as checked, to manually reset a streak and the repetition counter.
+All methods call functions from 'counter_manager.py'
 """
 
 import sqlite3
