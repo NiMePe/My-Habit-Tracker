@@ -80,7 +80,7 @@ How to install the project:
 ## Usage
 1. **Open a terminal in your project root (where main.py is)**
     - cd <repository_folder>
-    - e. g., cd C:\Users\Your_Name\Desktop\My_Habit_Tracker\modules  
+    - e. g., cd C:\Users\Your_Name\Desktop\My-Habit-Tracker-main\modules  
 
 2. **Start the program**
     - Open your virtual environment
@@ -101,7 +101,7 @@ How to install the project:
 ## Testing
 **How to run tests for the project:**  
 - Open your virtual environment  
-- Change directory to test folder: cd <tests_folder> (e.g. C:\Users\Your_Name\Desktop\My_Habit_Tracker\tests)  
+- Change directory to test folder: cd <tests_folder> (e.g. C:\Users\Your_Name\Desktop\My-Habit-Tracker-main\tests)  
 - For testing all test files enter: pytest tests -vv  
 - For testing only one test file enter: pytest 'name_of_test_file'.py -vv 
 
