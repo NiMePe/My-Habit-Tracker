@@ -1,8 +1,8 @@
 """
-    This file contains the user class.
-    It allows a given user to create and edit their profile.
-    It also contains a method to authenticate a user instance before viewing or manipulating their data.
-    For this purpose, the class's methods call the respective functions from 'user_manager.py'
+This file contains the user class.
+It allows a given user to create and edit their profile.
+It also contains a method to authenticate a user instance before viewing or manipulating their data.
+For this purpose, the class's methods call the respective functions from 'user_manager.py'
 """
 
 from user_manager import create_name, create_id, create_pwd, change_profile, user_auth, create_profile
