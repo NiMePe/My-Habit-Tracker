@@ -113,7 +113,8 @@ def login_user_menu(cur, db):
               LOGIN TO YOUR USER PROFILE
         **************************************
         """)
-        return user.user_auth()
+        user_id = user.user_auth()
+        return user_id
     elif log_input == "2":
         print("""
         **************************************
@@ -122,6 +123,8 @@ def login_user_menu(cur, db):
         """)
         # 1. Create the profile
         user.create_profile()
+        user_id = user.user_id
+        return user_id
 
         # 2. Verify that profile is in database
         cur_db = db.cursor()
@@ -371,9 +374,10 @@ def main():
             return
 
         # Step 3: User Authentication
+        db, cur = database_needed()
         user_id = login_user_menu(cur, db)
         if not user_id:
-            print("Exiting program. Thanks and goodbye!")
+            print("Failed to authenticate the user. Exiting program.")
             return
 
         #Step 4: Main User Menu
