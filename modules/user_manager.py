@@ -232,17 +232,15 @@ def user_auth(cur, db):
         try:
             print("\n***User Authentication***")
             identifier = input("Please enter your username or user ID: ").strip()
-            cur.execute(
-                "SELECT user_pwd FROM user WHERE user_name = ? OR user_id = ?", 
-                (identifier, identifier)
-            )
-            result = cur.fetchone()            
+            cur.execute("SELECT user_id, user_pwd FROM user WHERE user_name = ? OR user_id = ?",
+                    (identifier, identifier))
+            result = cur.fetchone()          
             if result:
-                stored_pwd = result[0]
+                real_id, stored_pwd = result
                 input_pwd = pwinput.pwinput("Please enter your password: ")
                 if input_pwd == stored_pwd:
                     print("Authentication successful!")
-                    return identifier
+                    return real_id
                 else:
                     attempts += 1
                     print("Incorrect password. Please try again.")
