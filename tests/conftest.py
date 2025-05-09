@@ -46,7 +46,7 @@ def sample_data(db_and_cursor):
     # Insert test user
     cur.execute(
         "INSERT OR IGNORE INTO user (user_id, user_name, user_pwd) VALUES (?, ?, ?)",
-        ("test0123", "testuser", "secret")
+        ("test0123", "testuser", "pa$$word123")
     )
     conn.commit()
 
