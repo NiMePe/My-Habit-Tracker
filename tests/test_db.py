@@ -14,6 +14,7 @@ class TestDB:
         # Create a temporary database for testing db module functions
         self.db_file = tmp_path / "test_db.db"
         self.db = sqlite3.connect(str(self.db_file))
+        self.db.execute("PRAGMA foreign_keys = ON")
         self.cur = self.db.cursor()
         yield
         self.db.close()
