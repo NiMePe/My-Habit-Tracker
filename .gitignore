@@ -3,28 +3,28 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# SQLite DBs
+# SQLite database
 main_db.db
 *.sqlite3
 *.db
 
-# pytest-Cache und Coverage
+# pytest cache and coverage
 .pytest_cache/
 htmlcov/
 .coverage
 .coverage.*
 
-# Virtuelle Umgebungen
+# Virtual environments
 venv/
 .env/
 env/
 
-# Logs und temporäre Dateien
+# Logs and temporary files
 *.log
 *.tmp
 *.bak
 
-# IDE/Editor-Einstellungen
+# IDE/Editor settings
 .vscode/
 .idea/
 .DS_Store
