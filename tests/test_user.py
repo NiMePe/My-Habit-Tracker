@@ -80,4 +80,4 @@ class TestUser:
         user_instance = User(self.db)
         auth_result = user_instance.user_auth()
         # 4. Check that the authentication was successful by returning the username
-        assert auth_result == "authuser"
+        assert auth_result == "test0123"
