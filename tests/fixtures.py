@@ -1,6 +1,6 @@
 """
-    The fixture file contains a helper function to automatically generate sample data for 
-    a period of four weeks. It loads the sample data in the database by making us of add_counter function.
+The fixture file contains a helper function to automatically generate sample data for 
+a period of four weeks. It loads the sample data in the database by making us of add_counter function.
 """
 
 from datetime import datetime, timedelta
